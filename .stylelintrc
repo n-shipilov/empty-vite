@@ -6,6 +6,6 @@
     "color-hex-length": null,
     "custom-property-empty-line-before": null,
     "order/order": ["dollar-variables", "custom-properties", "declarations", "at-rules", "rules"],
-    "unit-allowed-list": ["%", "px", "ms"]
+    "unit-allowed-list": ["%", "vh", "px", "s", "deg"]
   }
 }
