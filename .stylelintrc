@@ -1,13 +1,11 @@
 {
-  "extends": "stylelint-config-standard-scss",
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-idiomatic-order"],
+  "plugins": ["stylelint-order"],
   "rules": {
     "color-function-notation": "modern",
     "color-hex-length": null,
     "custom-property-empty-line-before": null,
-    "unit-allowed-list": [
-      "%",
-      "px",
-      "ms"
-    ]
+    "order/order": ["dollar-variables", "custom-properties", "declarations", "at-rules", "rules"],
+    "unit-allowed-list": ["%", "px", "ms"]
   }
 }
