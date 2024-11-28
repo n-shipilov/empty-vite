@@ -8,6 +8,13 @@ export default defineConfig({
     open: true,
     port: 5173,
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler",
+      },
+    },
+  },
   plugins: [
     react(),
     checker({
