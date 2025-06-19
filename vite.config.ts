@@ -10,7 +10,7 @@ export default defineConfig({
     react(),
     checker({
       typescript: { tsconfigPath: "tsconfig.json" },
-      stylelint: { lintCommand: "stylelint ./src/**/*.{scss}" },
+      stylelint: { lintCommand: 'stylelint "./src/**/*.{css,scss}"' },
       eslint: { useFlatConfig: true, lintCommand: 'eslint "./src/**/*.{ts,tsx}"' },
     }),
   ],
