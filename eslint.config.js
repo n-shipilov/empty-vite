@@ -1,4 +1,5 @@
-import js from "@eslint/js";
+import eslint from "@eslint/js";
+import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 import globals from "globals";
 import pluginReact from "eslint-plugin-react";
@@ -8,8 +9,10 @@ import pluginPrettier from "eslint-plugin-prettier";
 import configPrettier from "eslint-config-prettier";
 import pluginImport from "eslint-plugin-import";
 
-export default tseslint.config(
-  { extends: [js.configs.recommended, ...tseslint.configs.recommended] },
+export default defineConfig(
+  {
+    extends: [eslint.configs.recommended, tseslint.configs.recommended],
+  },
   { ignores: ["dist", "node_modules", "eslint.config.js"] },
   {
     languageOptions: {
@@ -29,6 +32,13 @@ export default tseslint.config(
       "react-refresh": pluginReactRefresh,
       prettier: pluginPrettier,
       import: pluginImport,
+    },
+  },
+  {
+    settings: {
+      "import/resolver": {
+        typescript: true,
+      },
     },
   },
   {
@@ -56,12 +66,7 @@ export default tseslint.config(
               position: "before",
             },
             {
-              pattern: "@/components/**",
-              group: "internal",
-              position: "after",
-            },
-            {
-              pattern: "@/lib/**",
+              pattern: "{app,components,consts,models,modules,pages,services}/**",
               group: "internal",
               position: "after",
             },
