@@ -16,6 +16,10 @@ export default defineConfig(
   { ignores: ["dist", "node_modules", "eslint.config.js"] },
   {
     languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        projectService: true,
+      },
       globals: {
         ...globals.browser,
         ...globals.node,
@@ -72,8 +76,7 @@ export default defineConfig(
             },
             {
               pattern: "*.{css,scss}",
-              group: "sibling",
-              position: "after",
+              group: "index",
             },
           ],
           pathGroupsExcludedImportTypes: ["react"],
